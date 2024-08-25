@@ -1,0 +1,68 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="bg-gray-100 mt-8 items-center justify-center px-4 sm:px-6 lg:px-8 ">
+    <div class="w-full max-w-xxl space-y-2 ">
+        <div class="bg-white shadow-md rounded-md p-4 border-2">
+
+
+            <div class="grid grid-cols-6 gap-6">
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="fleet" class="text-sm font-medium text-gray-900 block mb-2">Fleet</label>
+                    <text type="text" name="fleet" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5">{{ items.fleet }}<text/>
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="tail" class="text-sm font-medium text-gray-900 block mb-2">Tail</label>
+                    <text type="text" name="tail" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5">{{ items.tail }}<text/>
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="owner" class="text-sm font-medium text-gray-900 block mb-2">Owner</label>
+                    <text type="text" name="owner" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5">{{ items.owner }}<text/>
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="contact" class="text-sm font-medium text-gray-900 block mb-2">Contact</label>
+                    <text type="email" name="contact" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5">{{ items.contact }}<text/>
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="duedate" class="text-sm font-medium text-gray-900 block mb-2">Due Date</label>
+                    <text type="date" name="duedate" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5">{{ items.duedate }}<text/>
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="logged" class="text-sm font-medium text-gray-900 block mb-2">Loged Date</label>
+                    <text type="date" name="logged" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5">{{ items.logged}}<text/>
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="level1" class="text-sm font-medium text-gray-900 block mb-2">Level-1</label>
+                    <text type="email" name="level1" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5">{{ items.level1 }}<text/>
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="level2" class="text-sm font-medium text-gray-900 block mb-2">Level-2</label>
+                    <text type="email" name="level2" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5">{{ items.level2 }}<text/>
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="level3" class="text-sm font-medium text-gray-900 block mb-2">Level-3</label>
+                    <text type="email" name="level3" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5">{{ items.level3 }}<text/>
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="status" class="text-sm font-medium text-gray-900 block mb-2">Status</label>
+                    <text type="text" name="status" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5">{{ items.status }}<text/>
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="requestedby" class="text-sm font-medium text-gray-900 block mb-2">Created By</label>
+                    <text type="text" name="requestedby" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5">{{ items.status }}<text/>
+                </div>
+                <div class="col-span-full">
+                    <label for="remark" class="text-sm font-medium text-gray-900 block mb-2">Remark</label>
+                    <text name="remark" rows="6" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-4" placeholder="Details">{{ items.remark }}</textarea>
+                </div>
+                <div class="col-span-full">
+                    <label for="equired_action" class="text-sm font-medium text-gray-900 block mb-2">Required Action</label>
+                    <text name="required_action" rows="6" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-4" placeholder="Details">{{ items.required_action }}</textarea>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% block content %}
+    <div class="px-2">
+        <a href="{% url "items:add" %}">
+            <button class="py-4 px-8 mt-2 hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 rounded-lg text-white">New</button>
+         </a>
+    </div>
+    <div class="mt-6 grid grid-cols-4 gap-4 px-4">
+        {% for item in items %}
+        <a href="{% url "items:view" item.id%}" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                <div class="flex items-center justify-between">
+                <p class="font-normal text-gray-700 dark:text-gray-400">{{ item.requestedby }}</p>
+                <p class="flex items-center justify-end font-normal text-gray-700 dark:text-sky-500">{{ item.status }}</p>
+                </div>
+                <div class="flex items-center justify-between">
+                    <p class="font-normal text-gray-700 dark:text-green-400">{{ item.logged }}</p>
+                    <p class="flex items-center justify-end font-normal text-red-700 dark:text-red-400">{{ item.duedate }}</p>
+                </div>
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ item.tail }}</h5>
+                <p class="font-normal text-gray-700 dark:text-gray-400">{{ item.remark | truncatechars:200}}</p>
+                </a>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}

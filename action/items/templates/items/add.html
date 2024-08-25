@@ -1,0 +1,74 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<div class="bg-gray-300 border border-4 rounded-lg shadow relative m-10">
+
+    <div class="flex items-start justify-between p-5 border-b rounded-t">
+        <h3 class="text-xl font-semibold">
+            Add Action Items
+        </h3>
+    </div>
+
+    <div class="p-6 space-y-6">
+        <form method="post" action=".">
+            {% csrf_token %}
+            <div class="grid grid-cols-6 gap-6">
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="fleet" class="text-sm font-medium text-gray-900 block mb-2">Fleet</label>
+                    <input type="text" name="fleet" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="B787”" required="">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="tail" class="text-sm font-medium text-gray-900 block mb-2">Tail</label>
+                    <input type="text" name="tail" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="ET-AUO">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="owner" class="text-sm font-medium text-gray-900 block mb-2">Owner</label>
+                    <input type="text" name="owner" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Systems Engineering">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="contact" class="text-sm font-medium text-gray-900 block mb-2">Contact</label>
+                    <input type="email" name="contact" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="email">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="duedate" class="text-sm font-medium text-gray-900 block mb-2">Due Date</label>
+                    <input type="date" name="duedate" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="email">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="logged" class="text-sm font-medium text-gray-900 block mb-2">Loged Date</label>
+                    <input type="date" name="logged" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="email">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="level1" class="text-sm font-medium text-gray-900 block mb-2">Level-1</label>
+                    <input type="email" name="level1" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="email">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="level2" class="text-sm font-medium text-gray-900 block mb-2">Level-2</label>
+                    <input type="email" name="level2" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="email">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="level3" class="text-sm font-medium text-gray-900 block mb-2">Level-3</label>
+                    <input type="email" name="level3" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="email">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="status" class="text-sm font-medium text-gray-900 block mb-2">Status</label>
+                    <input type="text" name="status" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="Open/Closed">
+                </div>
+                <div class="col-span-6 sm:col-span-3">
+                    <label for="requestedby" class="text-sm font-medium text-gray-900 block mb-2">Created By</label>
+                    <input type="text" name="requestedby" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5" placeholder="">
+                </div>
+                <div class="col-span-full">
+                    <label for="remark" class="text-sm font-medium text-gray-900 block mb-2">Remark</label>
+                    <textarea name="remark" rows="6" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-4" placeholder="Details"></textarea>
+                </div>
+                <div class="col-span-full">
+                    <label for="equired_action" class="text-sm font-medium text-gray-900 block mb-2">Required Action</label>
+                    <textarea name="required_action" rows="6" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-4" placeholder="Details"></textarea>
+                </div>
+                <div class="p-6 border-t border-gray-200 rounded-b flex items-center justify-center ">
+                    <button class="text-white bg-cyan-600 hover:bg-cyan-700 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
